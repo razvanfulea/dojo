@@ -1,0 +1,9 @@
+### <Java ignored files>
+
+# IntelliJ config
+/java/**/.idea/
+
+# Build folder
+/java/**/target/
+
+### </Java ignored files>
