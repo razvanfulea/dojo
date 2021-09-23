@@ -15,3 +15,10 @@
 /python/**/__pycache__/
 
 ### </Python ignored files>
+
+### <Node ignored files>
+
+/node/**/node_modules/
+/node/**/package-lock.json
+
+### </Node ignored files>
