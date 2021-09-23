@@ -6,31 +6,40 @@ import static java.lang.Math.sqrt;
 
 public class PrimeFactors {
 
-    public List<Integer> resolve(int number) {
-        if (number <= 0) {
-            throw new IllegalArgumentException("Invalid argument: " + number);
-        }
+    private List<Integer> result;
+    private int number;
+
+    public List<Integer> resolve(int n) {
+        number = n;
+        validateArgument();
+
         if (number <= 2) {
             return Collections.singletonList(number);
         }
 
-        List<Integer> result = new LinkedList<>();
+        result = new LinkedList<>();
 
-        number = determineTwos(result, number);
-        determineOdds(result, number);
+        determineTwos();
+        determineOdds();
 
         return result;
     }
 
-    private int determineTwos(List<Integer> result, int number) {
+    private void validateArgument() {
+        if (number <= 0) {
+            throw new IllegalArgumentException("Invalid argument: " + number);
+        }
+    }
+
+
+    private void determineTwos() {
         while ((number & 1) == 0) {
             number >>= 1;
             result.add(2);
         }
-        return number;
     }
 
-    private void determineOdds(List<Integer> result, int number) {
+    private void determineOdds() {
         double root = sqrt(number);
         for (int divisor = 3; divisor <= root; divisor += 2) {
             while (number % divisor == 0) {
