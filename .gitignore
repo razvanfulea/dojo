@@ -7,3 +7,11 @@
 /java/**/target/
 
 ### </Java ignored files>
+
+### <Python ignored files>
+
+# PyCharm config
+/python/**/.idea/
+/python/**/__pycache__/
+
+### </Python ignored files>
