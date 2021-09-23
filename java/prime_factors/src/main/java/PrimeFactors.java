@@ -31,7 +31,6 @@ public class PrimeFactors {
         }
     }
 
-
     private void determineTwos() {
         while ((number & 1) == 0) {
             number >>= 1;
